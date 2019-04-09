@@ -23,3 +23,6 @@ product_quantity:
 per_page: 15
 per_page:
   products: 12
+carts:
+  minimum_quantity: 1
+  no_product: 0
