@@ -75,6 +75,7 @@ en:
       phone_number: "Phone Number"
       password: "Password"
       phone_number: "Phone Number"
+      password: "Password"
       confirmation: "Confirmation"
     create:
       welcome: "Welcome to the Sample App!"
@@ -97,8 +98,6 @@ en:
       invalid_email_password: "Invalid email/password combination"
       account_not_activated: "Account not activated.
         Check your email for the activation link."
-  user_mailer:
-    activation_subject: "Account activation"
   password_resets:
     new:
       title: "Forgot password"

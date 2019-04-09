@@ -15,3 +15,5 @@ product_name:
 product_information:
   maximum: 4095
   minimum: 20
+per_page:
+  products: 12

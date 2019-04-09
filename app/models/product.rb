@@ -13,4 +13,5 @@ class Product < ApplicationRecord
     }
   validates :quantity, presence: true
   validates :category_id, presence: true
+  scope :order_desc, ->{order(created_at: :desc)}
 end
