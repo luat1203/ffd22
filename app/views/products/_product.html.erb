@@ -15,14 +15,27 @@
         <%= truncate_info product.information %>
       </p>
     </div>
-    <div class="card-footer">
-      <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-      <% if user_signed_in? %>
-        <% if current_user.admin? %>
-          <%= link_to t("edit"), edit_product_path(product),
-            class: "btn btn-success btn-sm" %>
-          <%= link_to t("delete"), product, method: :delete,
-            data: {confirm: t("you_sure")}, class: "btn btn-danger btn-sm" %>
+      <div class="card-footer">
+        <small class="text-muted">
+          <% if product.comments.present? %>
+            <% product.comments.average(:rating).ceil.times do %>
+              <span class="text-warning">&#9733;</span>
+            <% end %>
+            <% blank_star(product.comments.average(:rating)).ceil.times do %>
+              <span class="text-warning">&#9734;</span>
+            <% end %>
+            <%= t("products.product",
+              count: product.comments.average(:rating).ceil) %>
+          <% end %>
+        </small>
+
+        <% if user_signed_in? && current_user.admin? %>
+          <div>
+            <%= link_to t("edit"), edit_product_path(product),
+              class: "btn btn-success btn-sm" %>
+            <%= link_to t("delete"), product, method: :delete,
+              data: {confirm: t("you_sure")}, class: "btn btn-danger btn-sm" %>
+          </div>
         <% else %>
           <%= form_for(:cart, url: url_for(controller: "carts",
             action: "create"), remote: true) do |f| %>
@@ -39,7 +52,6 @@
             </div>
           <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
   </div>
 </div>

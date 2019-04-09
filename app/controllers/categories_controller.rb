@@ -1,12 +1,18 @@
 class CategoriesController < ApplicationController
-  before_action :load_category, only: %i(edit update destroy)
-  before_action :logged_in_user, :admin_user
+  before_action :load_category, except: %i(new create index)
+  before_action :authenticate_user!
 
   def index
     @categories = Category.includes(:children).find_parent_id.order(:name)
                           .paginate(
                             page: params[:page], per_page: Settings.per_page
                           )
+  end
+
+  def show
+    @products = Product.where(category_id: params[:id])
+                       .paginate(page: params[:page],
+                         per_page: Settings.per_page)
   end
 
   def new
