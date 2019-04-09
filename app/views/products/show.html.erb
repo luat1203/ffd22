@@ -2,7 +2,8 @@
 <div class="col-lg-9">
 
   <div class="card mt-4">
-    <%= image_tag("1.jpg", class: "card-img-top img-fluid") %>
+    <%= image_tag(@product.image.url,
+      class: "card-img-top img-fluid") if @product.image? %>
     <div class="card-body">
       <h3 class="card-title">
         <%= @product.name %>

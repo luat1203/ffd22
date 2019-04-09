@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :category
+  mount_uploader :image, ImageUploader
   validates :name, presence: true,
     length: {
       maximum: Settings.product_name.maximum,
@@ -14,4 +15,5 @@ class Product < ApplicationRecord
   validates :quantity,
     numericality: {greater_than_or_equal_to: Settings.product_quantity.minimum}
   validates :category_id, presence: true
+  scope :order_desc, ->{order created_at: :desc}
 end

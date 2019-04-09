@@ -1,15 +1,47 @@
 class ProductsController < ApplicationController
-  before_action :load_product, only: %i(show destroy)
+  before_action :logged_in_user, :admin_user,
+    only: %i(new create edit update destroy)
+  before_action :load_product, only: %i(show edit update destroy)
 
   def show; end
 
+  def index
+    @products = Product.order_desc.paginate page: params[:page],
+      per_page: Settings.per_page.products
+  end
+
+  def new
+    @product = Product.new
+  end
+
+  def create
+    @product = Product.new product_params
+    if @product.save
+      flash[:info] = t "controllers.products.product_created"
+      redirect_to @product
+    else
+      render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @product.update_attributes product_params
+      flash[:success] = t ".product_updated"
+      redirect_to @product
+    else
+      render :edit
+    end
+  end
+
   def destroy
     if @product.destroy
-      flash[:success] = t ".destroy_success"
+      flash[:success] = t ".product_deleted"
     else
-      flash[:danger] = t ".destroy_failed"
+      flash[:danger] = t ".product_delete_failed"
     end
-    redirect_to request.referrer || root_path
+    redirect_to products_path
   end
 
   private
@@ -19,5 +51,10 @@ class ProductsController < ApplicationController
     return if @product
     flash[:danger] = t "controllers.products.product_not_found"
     redirect_to root_path
+  end
+
+  def product_params
+    params.require(:product).permit :name, :image, :price, :information,
+      :classify, :quantity, :category_id
   end
 end

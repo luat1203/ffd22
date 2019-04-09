@@ -29,12 +29,12 @@ class SessionsController < ApplicationController
   def user_activated_or_not user
     if user.activated?
       log_in user
-      redirect_back_or @user
       if params[:session][:remember_me] == Settings.remember_me
         remember user
       else
         forget user
       end
+      redirect_back_or @user
     else
       flash[:warning] = t ".account_not_activated"
       redirect_to root_path

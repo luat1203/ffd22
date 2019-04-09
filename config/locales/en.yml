@@ -8,6 +8,13 @@ en:
   foods_and_drinks: "Foods & Drinks"
   about: "About"
   help: "Help"
+  products: "Products"
+  food: "Food"
+  drink: "Drink"
+  add: "Add"
+  edit: "Edit"
+  delete: "Delete"
+  you_sure: "You sure?"
   static_pages:
     home:
       title: "Home"
@@ -59,11 +66,10 @@ en:
       email: "Email"
       phone_number: "Phone Number"
       password: "Password"
+      password: "Password"
       phone_number: "Phone Number"
       confirmation: "Confirmation"
       phone: "Phone Number"
-    logged_in_user:
-      please_log_in: "Please log in."
     create:
       welcome: "Welcome to the Sample App!"
       check_email: "Please check your email to activate your account."
@@ -134,8 +140,30 @@ en:
   products:
     show:
       quantity: "Quantity"
+    new:
+      create_product: "Create Product"
+      name: "Name"
+      price: "Price"
+      information: "Information"
+      image: "Image"
+      classify: "Classify"
+      quantity: "Quantity"
+      category_id: "Category Id"
+    edit:
+      edit_product: "Edit Product"
+    index:
+      heading: "Products"
+    update:
+      product_updated: "Product updated"
+    destroy:
+      product_deleted: "Product deleted"
+      product_delete_failed: "Delete product failed"
+  application:
+    logged_in_user:
+      please_log_in: "Please log in."
   controllers:
     products:
+      product_created: "Product Created"
       product_not_found: "Product not found"
     users:
       user_not_found: "User not found"
