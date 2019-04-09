@@ -169,11 +169,12 @@ en:
     show:
       your_cart: "Your Cart"
       no_item: "There are no items in your shopping cart."
-    cart_row:
+    shopping_cart:
+      total: "Total: "
+    cart_product:
       you_sure: "Are you sure?"
   controllers:
     products:
-      product_created: "Product Created"
       product_not_found: "Product not found"
       product_created: "Product Created"
     users:
