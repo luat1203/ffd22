@@ -6,12 +6,24 @@
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
+        <% if logged_in? && !admin_user? %>
+          <li class="nav-item">
+            <%= link_to carts_show_path, class: "btn btn-info" do %>
+              <%= t "cart" %>
+              <span class="cart-text badge badge-light ml-1">
+                <%= render_cart_quantity %>
+              </span>
+            <% end %>
+          </li>
+        <% end %>
+
         <li class="nav-item">
           <%= link_to t(".home"), root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to t(".products"), products_path, class: "nav-link" %>
         </li>
+
         <% if logged_in? %>
           <% if admin_user? %>
             <li class="nav-item">
@@ -22,6 +34,7 @@
           <li class="nav-item">
             <%= link_to t(".users"), users_path, class: "nav-link" %>
           </li>
+
           <li class="nav-item dropdown">
             <%= link_to "#", class: "nav-link dropdown-toggle",
               "data-toggle" => "dropdown" do %>
