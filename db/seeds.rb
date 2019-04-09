@@ -31,7 +31,7 @@ Category.create!(
 )
 
 # Product Seed
-12.times do
+15.times do
   Product.create!(
     name: Faker::Lorem.sentence(5),
     price: Faker::Number.between(10, 900),
