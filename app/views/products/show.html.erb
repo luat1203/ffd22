@@ -1,0 +1,21 @@
+<% provide(:title, @product.name) %>
+<div class="col-lg-9">
+
+  <div class="card mt-4">
+    <%= image_tag(@product.image, class: "card-img-top img-fluid", alt: "") %>
+    <div class="card-body">
+      <h3 class="card-title">
+        <%= @product.name %>
+      </h3>
+      <h4>
+        $<%= @product.price %>
+      </h4>
+      <p class="card-text">
+        <%= @product.information %>
+      </p>
+      <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+      4.0 stars
+    </div>
+  </div>
+
+</div>

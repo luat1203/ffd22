@@ -51,8 +51,11 @@ ActiveRecord::Schema.define(version: 2019_04_11_061632) do
     t.text "image"
     t.boolean "classify"
     t.integer "quantity"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id", "created_at"], name: "index_products_on_category_id_and_created_at"
+    t.index ["category_id"], name: "index_products_on_category_id"
   end
 
   create_table "suggestions", force: :cascade do |t|
