@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :load_category, except: %i(new create index)
   before_action :authenticate_user!
+  authorize_resource
 
   def index
     @categories = Category.includes(:children).find_parent_id.order(:name)

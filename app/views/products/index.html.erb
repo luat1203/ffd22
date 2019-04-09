@@ -4,7 +4,7 @@
 <div class="col-md-9">
   <div>
     <%= link_to t("add"), new_product_path,
-      class: "btn btn-success" if user_signed_in? && current_user.admin? %>
+      class: "btn btn-success" if can? :create, Product %>
   </div>
 
   <div class="dropdown-divider"></div>

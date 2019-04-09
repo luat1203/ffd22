@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     post "comments/:id/edit", to: "comments#edit", as: "edit_comment"
 
     resources :products, :categories, :suggestions
-    resources :users, only: %i(show index)
+    resources :users, only: %i(show index destroy)
     resources :comments, only: %i(create update destroy)
     resources :orders, except: %i(new edit)
   end

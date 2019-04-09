@@ -1,12 +1,22 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: :show
-  before_action :authenticate_user!, only: %i(index show)
+  before_action :load_user, only: %i(show destroy)
+  before_action :authenticate_user!, only: %i(index show destroy)
+  authorize_resource
 
   def index
     @users = User.paginate page: params[:page], per_page: Settings.per_page
   end
 
   def show; end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t ".user_deleted"
+    else
+      flash[:danger] = t ".delele_failed"
+    end
+    redirect_to :users
+  end
 
   private
 

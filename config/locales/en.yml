@@ -182,6 +182,7 @@ en:
       add_to_cart: "Add to Cart"
       one: "1 star"
       other: "%{count} stars"
+      log_in_to_add: "Login to add"
   application:
     logged_in_user:
       please_log_in: "Please log in."
@@ -202,6 +203,8 @@ en:
     index:
       title: "My Orders"
       no_order: "No Order"
+    destroy:
+      cannot_delete_approved_order: "Cannot delete approved order"
     controllers:
       order_not_found: "This order not found"
       order_deleted: "Order Deleted"
