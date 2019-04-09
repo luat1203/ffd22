@@ -17,8 +17,9 @@
   </span>
 
   <%= f.label :classify, t(".classify") %>
-  <%= f.select(:classify, options_for_select([[t("food"), true],
-    [t("drink"), false]]), {include_blank: false}, class: "form-control") %>
+  <%= f.select(:classify, options = [[t("food"), true],
+    [t("drink"), false]], {selected: @product.classify},
+    {class: "form-control"}) %>
 
   <%= f.label :quantity, t(".quantity") %>
   <%= f.number_field :quantity, class: "form-control" %>
