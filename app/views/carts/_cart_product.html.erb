@@ -1,5 +1,6 @@
 <% product = find_product(cart_product[0]) %>
-<%= form_for(:cart, remote: true) do |f| %>
+<%= form_for(:carts, url: carts_update_path,
+  remote: true) do |f| %>
   <% if product.present? %>
     <div class="row">
       <div class="col-12 col-sm-12 col-md-2 text-center">
@@ -26,12 +27,13 @@
             </div>
         </div>
         <div class="col-4 col-sm-4 col-md-4 text-right" style="padding: 0">
-          <%= button_tag class: "btn btn-primary" do %>
+          <%= f.button class: "btn btn-success" do %>
             <i class="fa fa-edit"></i>
           <% end %>
-          <%= link_to "#",
-            {data: {confirm: t(".you_sure")},
-              method: :delete, remote: true, class: "btn btn-danger"} do %>
+
+          <%= link_to carts_destroy_path(product_id: product.id ),
+            method: :delete, data: {confirm: t("you_sure")}, remote: true,
+            class: "btn btn-danger" do %>
             <i class="fa fa-trash-o"></i>
           <% end %>
         </div>

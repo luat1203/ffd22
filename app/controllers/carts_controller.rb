@@ -1,19 +1,37 @@
 class CartsController < ApplicationController
   require "json"
   before_action :logged_in_user, :load_cart_products,
-    only: %i(create show)
+    only: %i(create show update destroy)
   before_action :load_item, only: :create
 
   def create
     @cart_products.merge!(@item)
     cookies.permanent[current_user.id] = JSON.generate(@cart_products)
     respond_to do |format|
-      format.html{redirect_to root_path}
+      format.html{redirect_to products_path}
       format.js
     end
   end
 
   def show; end
+
+  def update
+    @cart_products[params[:carts][:product_id]] = params[:carts][:quantity]
+    cookies.permanent[current_user.id] = JSON.generate(@cart_products)
+    respond_to do |format|
+      format.html{redirect_to carts_path}
+      format.js
+    end
+  end
+
+  def destroy
+    @cart_products.delete params[:product_id]
+    cookies.permanent[current_user.id] = JSON.generate(@cart_products)
+    respond_to do |format|
+      format.html{redirect_to carts_path}
+      format.js
+    end
+  end
 
   private
 
