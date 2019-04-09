@@ -1,0 +1,18 @@
+name:
+  maximum: 50
+email:
+  maximum: 255
+password:
+  minimum: 6
+gravatar:
+  size_80: 80
+expired:
+  password_reset: 2
+product_name:
+  maximum: 255
+  minimum: 10
+product_information:
+  maximum: 4095
+  minimum: 20
+per_page:
+  products: 12

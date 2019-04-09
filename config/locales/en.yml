@@ -30,4 +30,88 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  name: "Name"
+  email: "Email"
+  password: "Password"
+  submit: "Submit"
+  confirmation: "Confirmation"
   hello: "Hello world"
+  foods_and_drinks: "Foods & Drinks"
+  static_pages:
+    home:
+      title: "Home"
+    help:
+      title: "Help"
+    about:
+      title: "About"
+  layouts:
+    header:
+      home: "Home"
+      help: "Help"
+      log_in: "Log in"
+      users: "Users"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      log_out: "Log out"
+  users:
+    new:
+      sign_up: "Sign up"
+      create_my_account: "Create my account"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      confirmation: "Confirmation"
+    create:
+      welcome: "Welcome to the Sample App!"
+      check_email: "Please check your email to activate your account."
+  shared:
+    error_messages:
+      form_contains: "The form contains "
+      one: "1 error"
+      other: "%{count} errors"
+  sessions:
+    new:
+      log_in: "Log in"
+      email: "Email"
+      password: "Password"
+      new_user_text: "New user? "
+      sign_up_now: "Sign up now!"
+      remember_me: "Remember me on this computer"
+      forgot_password: "(forgot password)"
+    create:
+      invalid_email_password: "Invalid email/password combination"
+      account_not_activated: "Account not activated. "
+      check_email: "Check your email for the activation link."
+  password_resets:
+    new:
+      title: "Forgot password"
+    edit:
+      title: "Reset password"
+      update_password: "Update password"
+    create:
+      email_sent: "Email sent with password reset instructions"
+      email_not_found: "Email address not found"
+    update:
+      cant_empty: "can't be empty"
+      has_been_reset: "Password has been reset."
+    load_user:
+      user_not_found: "User not found"
+    check_expiration:
+      password_has_expired: "Password reset has expired."
+  user_mailer:
+    activation_subject: "Account activation"
+    password_reset_subject: "Password reset"
+    account_activation:
+      text_1: "Hi"
+      text_2: "Welcome to the Sample App!
+        Click on the link below to activate your account:"
+      activate: "Activate"
+    password_reset:
+      heading: "Password reset"
+      text_1: "To reset your password click the link below:"
+      reset_password: "Reset password"
+  account_activations:
+    edit:
+      account_activated: "Account activated!"
+      invalid_link: "Invalid activation link"
