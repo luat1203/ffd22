@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: %i(new create edit update destroy)
   before_action :load_product, except: %i(create new index)
   before_action :load_list_products, only: :index
+  load_and_authorize_resource
 
   def show
     @comment = Comment.new

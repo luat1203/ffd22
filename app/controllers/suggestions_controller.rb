@@ -1,5 +1,6 @@
 class SuggestionsController < ApplicationController
   before_action :load_suggestion, only: %i(show destroy)
+  load_and_authorize_resource
 
   def index
     @suggestions = Suggestion.paginate page: params[:page],

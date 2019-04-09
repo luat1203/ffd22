@@ -6,16 +6,14 @@
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <% if user_signed_in? && !current_user.admin? %>
-          <li class="nav-item">
-            <%= link_to carts_path, class: "btn btn-info" do %>
-              <%= t "cart" %>
-              <span class="cart-text badge badge-light ml-1">
-                <%= render_cart_quantity %>
-              </span>
-            <% end %>
-          </li>
-        <% end %>
+        <li class="nav-item">
+          <%= link_to carts_path, class: "btn btn-info" do %>
+            <%= t "cart" %>
+            <span class="cart-text badge badge-light ml-1">
+              <%= render_cart_quantity %>
+            </span>
+          <% end %>
+        </li>
 
         <li class="nav-item">
           <%= link_to t(".home"), root_path, class: "nav-link" %>

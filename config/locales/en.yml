@@ -182,6 +182,7 @@ en:
       add_to_cart: "Add to Cart"
       one: "1 star"
       other: "%{count} stars"
+      log_in_to_add: "Login to add"
   application:
     logged_in_user:
       please_log_in: "Please log in."

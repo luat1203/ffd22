@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   before_action :load_order, only: %i(show update destroy)
   before_action :check_quantity_available, :check_cart_products, only: :create
   before_action :load_list_orders, only: :index
+  load_and_authorize_resource
 
   def show
     if @order.user_id == current_user.id
