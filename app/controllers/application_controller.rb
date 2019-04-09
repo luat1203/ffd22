@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
-  before_action :set_locale
   include SessionsHelper
+  include CartsHelper
+  before_action :set_locale
+  before_action :load_cart_products
+  helper_method :current_order
 
   private
 

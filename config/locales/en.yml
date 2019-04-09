@@ -64,6 +64,7 @@ en:
     form:
       name: "Name"
       email: "Email"
+      password: "Password"
       phone_number: "Phone Number"
       password: "Password"
       password: "Password"
@@ -158,13 +159,19 @@ en:
     destroy:
       product_deleted: "Product deleted"
       product_delete_failed: "Delete product failed"
+    product:
+      add_to_cart: "Add to Cart"
   application:
     logged_in_user:
       please_log_in: "Please log in."
+  carts:
+    show:
+      your_cart: "Your Cart"
+      no_item: "There are no items in your shopping cart."
   controllers:
     products:
-      product_created: "Product Created"
       product_not_found: "Product not found"
+      product_created: "Product Created"
     users:
       user_not_found: "User not found"
     sessions:
