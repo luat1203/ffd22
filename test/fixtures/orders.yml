@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  ordered_at: 2019-04-09 11:30:05
+  status: false
+
+two:
+  user_id: 1
+  ordered_at: 2019-04-09 11:30:05
+  status: false
