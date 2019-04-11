@@ -31,3 +31,22 @@
 
 en:
   hello: "Hello world"
+  foods_and_drinks: "Foods & Drinks"
+  static_pages:
+    home:
+      title: "Home"
+    help:
+      title: "Help"
+    about:
+      title: "About"
+    contact:
+      title: "Contact"
+  layouts:
+    header:
+      home: "Home"
+      help: "Help"
+      log_in: "Log in"
+    footer:
+      about: "About"
+      contact: "Contact"
+      help: "Help"
