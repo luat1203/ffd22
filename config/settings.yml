@@ -11,7 +11,7 @@ expired:
   password_reset: 2
 product_name:
   maximum: 255
-  minimum: 10
+  minimum: 5
 product_information:
   maximum: 4095
   minimum: 20
