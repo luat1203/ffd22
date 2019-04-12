@@ -22,9 +22,10 @@
               <%= t ".account" %><b class="caret"></b>
             <% end %>
             <ul class="dropdown-menu">
-
-              <li class="dropdown-item"><%= link_to t(".profile"), current_user %></li>
-              <li class="dropdown-item"><%= link_to t(".settings"), "#" %></li>
+              <li class="dropdown-item"><%= link_to t(".profile"),
+                current_user %></li>
+              <li class="dropdown-item"><%= link_to t(".settings"),
+                edit_user_path(current_user) %></li>
               <li class="dropdown-divider"></li>
               <li class="dropdown-item">
                 <%= link_to t(".log_out"), logout_path, method: :delete %>

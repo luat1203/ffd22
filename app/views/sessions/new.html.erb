@@ -1,7 +1,7 @@
 <% provide(:title, t(".log_in")) %>
 
 <%= form_for(:session, url: login_path,
-  html: {class: "form-signin"}) do |f| %>
+  html: {class: "form-user"}) do |f| %>
   <h1 class="h3 mb-3 font-weight-normal"><%= t ".log_in" %></h1>
 
   <%= f.label :email, t(".email"), class: "sr-only" %>
