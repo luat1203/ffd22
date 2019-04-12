@@ -51,6 +51,11 @@ en:
       about: "About"
       contact: "Contact"
       help: "Help"
+      users: "Users"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      log_out: "Log out"
   users:
     new:
       sign_up: "Sign up"
@@ -61,10 +66,20 @@ en:
       confirmation: "Confirmation"
     create:
       welcome: "Welcome to the Sample App!"
-    load_user:
+    show:
       user_not_found: "User not found"
+    load_user:
   shared:
     error_messages:
       form_contains: "The form contains "
       one: "1 error"
       other: "%{count} errors"
+  sessions:
+    new:
+      log_in: "Log in"
+      email: "Email"
+      password: "Password"
+      new_user_text: "New user? "
+      sign_up_now: "Sign up now!"
+    create:
+      invalid_email_password: "Invalid email/password combination"
