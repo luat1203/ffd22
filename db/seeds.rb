@@ -3,7 +3,7 @@ User.create!(
   email: "lyld1203@gmail.com",
   password: "123456",
   password_confirmation: "123456",
-  role: true,
+  role: 1,
   phone: "0123456789",
   activated: true,
   activated_at: Time.zone.now
@@ -14,7 +14,7 @@ User.create!(
   email: "abc@gmail.com",
   password: "asdasd",
   password_confirmation: "asdasd",
-  role: true,
+  role: 1,
   phone: "02156446846",
   activated: true,
   activated_at: Time.zone.now
@@ -28,7 +28,7 @@ User.create!(
   User.create!(
     name: name,
     email: email,
-    role: false,
+    role: 2,
     phone: phone,
     password: password,
     activated: true,
@@ -38,12 +38,23 @@ end
 
 # Category Seed
 Category.create!(
-  name: "Category 1",
+  name: "Fast Food",
+  parent_id: nil
 )
 
 Category.create!(
-  name: "Category 2",
-  parent_id: 1
+  name: "Bread",
+  parent_id: nil
+)
+
+Category.create!(
+  name: "Noodles",
+  parent_id: nil
+)
+
+Category.create!(
+  name: "Meat",
+  parent_id: nil
 )
 
 # Product Seed

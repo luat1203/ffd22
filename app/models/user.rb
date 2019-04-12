@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true,
     length: {minimum: Settings.password.minimum}, allow_nil: true
+  enum role: {admin: 1, normal_user: 2}
 
   # Returns the hash digest of the given string.
   def self.digest string

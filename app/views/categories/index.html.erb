@@ -1,12 +1,14 @@
 <% provide(:title, t(".title")) %>
 <h1 class="text-center"><%= t ".heading" %></h1>
 
-<%= will_paginate(@users,
+<%= will_paginate(@categories,
   renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 
-<ul class="users">
-  <%= render @users %>
+<%= link_to t(".add"), new_category_path,
+  class: "btn btn-outline-primary btn-sm ml-3"%>
+<ul class="list-group list-group-flush">
+  <%= render @categories %>
 </ul>
 
-<%= will_paginate(@users,
+<%= will_paginate(@categories,
   renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
