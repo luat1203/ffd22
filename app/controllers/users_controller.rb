@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :load_user, only: :show
 
+  def index
+    @users = User.paginate page: params[:page], per_page: Settings.per_page
+  end
+
   def new
     @user = User.new
   end
@@ -23,7 +27,7 @@ class UsersController < ApplicationController
   def load_user
     @user = User.find_by id: params[:id]
     return if @user
-    flash[:danger] = t "controllers.users.user_not_found"
+    flash[:danger] = t ".load_user.user_not_found"
     redirect_to root_path
   end
 
