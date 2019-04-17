@@ -138,6 +138,8 @@ en:
       classify: "Classify"
       quantity: "Quantity"
       category_id: "Category Id"
+    edit:
+      edit_product: "Edit Product"
   controllers:
     products:
       product_created: "Product Created"

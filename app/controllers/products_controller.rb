@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :load_product, only: :show
+  before_action :load_product, only: %i(show edit update)
 
   def new
     @product = Product.new
@@ -16,6 +16,17 @@ class ProductsController < ApplicationController
   end
 
   def show; end
+
+  def update
+    if @product.update_attributes product_params
+      flash[:success] = "updated"
+      redirect_to @product
+    else
+      render :edit
+    end
+  end
+
+  def edit; end
 
   private
 
