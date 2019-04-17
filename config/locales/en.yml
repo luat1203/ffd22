@@ -30,8 +30,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  name: "Name"
+  email: "Email"
+  password: "Password"
+  submit: "Submit"
+  confirmation: "Confirmation"
   hello: "Hello world"
   foods_and_drinks: "Foods & Drinks"
+  about: "About"
+  help: "Help"
   static_pages:
     home:
       title: "Home"
@@ -63,6 +70,7 @@ en:
       name: "Name"
       email: "Email"
       password: "Password"
+      phone_number: "Phone Number"
       confirmation: "Confirmation"
     create:
       welcome: "Welcome to the Sample App!"
@@ -82,17 +90,41 @@ en:
       new_user_text: "New user? "
       sign_up_now: "Sign up now!"
       remember_me: "Remember me on this computer"
+      forgot_password: "Forgot password"
     create:
       invalid_email_password: "Invalid email/password combination"
       account_not_activated: "Account not activated.
         Check your email for the activation link."
   user_mailer:
     activation_subject: "Account activation"
+  password_resets:
+    new:
+      title: "Forgot password"
+    edit:
+      title: "Reset password"
+      update_password: "Update password"
+    create:
+      email_sent: "Email sent with password reset instructions"
+      email_not_found: "Email address not found"
+    update:
+      cant_empty: "can't be empty"
+      has_been_reset: "Password has been reset."
+    load_user:
+      user_not_found: "User not found"
+    check_expiration:
+      password_has_expired: "Password reset has expired."
+  user_mailer:
+    activation_subject: "Account activation"
+    password_reset_subject: "Password reset"
     account_activation:
       text_1: "Hi"
       text_2: "Welcome to the Sample App!
         Click on the link below to activate your account:"
       activate: "Activate"
+    password_reset:
+      heading: "Password reset"
+      text_1: "To reset your password click the link below:"
+      reset_password: "Reset password"
   account_activations:
     edit:
       account_activated: "Account activated!"
@@ -103,4 +135,4 @@ en:
     sessions:
       user_not_found: "User not found"
     account_activations:
-      user_not_found: "User not found"
+      user_not_found: "User not found for activate"
