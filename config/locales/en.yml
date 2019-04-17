@@ -128,8 +128,19 @@ en:
     edit:
       account_activated: "Account activated!"
       invalid_link: "Invalid activation link"
+  products:
+    new:
+      create_product: "Create Product"
+      name: "Name"
+      price: "Price"
+      information: "Information"
+      image: "Image"
+      classify: "Classify"
+      quantity: "Quantity"
+      category_id: "Category Id"
   controllers:
     products:
+      product_created: "Product Created"
       product_not_found: "Product not found"
     users:
       user_not_found: "User not found"

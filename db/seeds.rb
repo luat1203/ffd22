@@ -36,7 +36,7 @@ Category.create!(
     name: Faker::Lorem.sentence(5),
     price: Faker::Number.between(10, 900),
     information: Faker::Lorem.paragraph(5),
-    image: "1.jpg",
+    image: Rails.root.join("app/assets/images/1.jpg").open,
     classify: true,
     quantity: Faker::Number.between(1, 90),
     category_id: 1
@@ -48,7 +48,7 @@ end
     name: Faker::Lorem.sentence(5),
     price: Faker::Number.between(10, 900),
     information: Faker::Lorem.paragraph(5),
-    image: "1.jpg",
+    image: Rails.root.join("app/assets/images/1.jpg").open,
     classify: false,
     quantity: Faker::Number.between(1, 90),
     category_id: 2

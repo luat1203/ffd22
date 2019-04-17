@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :category
+  mount_uploader :image, ImageUploader
   validates :name, presence: true,
     length: {
       maximum: Settings.product_name.maximum,

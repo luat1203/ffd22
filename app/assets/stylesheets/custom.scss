@@ -28,7 +28,7 @@ body {
   margin-bottom: -1px;
   border-radius: 0;
 }
-#user_password_confirmation, #password_reset_email {
+#user_password_confirmation, #password_reset_email, #product_category_id {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -36,6 +36,18 @@ body {
 
 /* forms-login */
 .checkbox {
+  margin-top: 10px;
+}
+
+/* forms product*/
+.form-product {
+  width: 100%;
+  max-width: 530px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-product label {
   margin-top: 10px;
 }
 
