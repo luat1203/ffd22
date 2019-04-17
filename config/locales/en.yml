@@ -30,8 +30,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  name: "Name"
+  email: "Email"
+  password: "Password"
+  submit: "Submit"
+  confirmation: "Confirmation"
   hello: "Hello world"
   foods_and_drinks: "Foods & Drinks"
+  about: "About"
+  help: "Help"
   static_pages:
     home:
       title: "Home"
@@ -62,6 +69,7 @@ en:
       create_my_account: "Create my account"
       name: "Name"
       email: "Email"
+      phone_number: "Phone Number"
       password: "Password"
       confirmation: "Confirmation"
     create:
