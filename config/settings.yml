@@ -9,3 +9,13 @@ gravatar:
 remember_me: "1"
 expired:
   password_reset: 2
+product_name:
+  maximum: 255
+  minimum: 10
+product_information:
+  maximum: 4095
+  minimum: 20
+product_price:
+  minimum: 0
+product_quantity:
+  minimum: 0
