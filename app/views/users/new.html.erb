@@ -3,7 +3,7 @@
 <%= form_for(@user, html: {class: "form-signin"}) do |f| %>
   <h1 class="h3 mb-3 font-weight-normal"><%= t ".sign_up" %></h1>
 
-  <%= render "shared/error_messages" %>
+  <%= render "shared/error_messages", object: @user %>
 
   <%= f.label :name, t(".name"), class: "sr-only" %>
   <%= f.text_field :name, class: "form-control", placeholder: t(".name"),
