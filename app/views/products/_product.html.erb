@@ -13,6 +13,17 @@
     </div>
     <div class="card-footer">
       <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+      <%= form_for order_product, remote: true do |f| %>
+        <div class="row">
+          <div class="col">
+            <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+          </div>
+          <div class="col">
+            <%= f.hidden_field :product_id, value: product.id %>
+            <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

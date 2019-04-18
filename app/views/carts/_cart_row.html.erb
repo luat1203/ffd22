@@ -1,0 +1,33 @@
+<%= form_for order_product do |f| %>
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-2 text-center">
+        <%= image_tag product.image, size: "100x100", class: "img-responsive" %>
+    </div>
+    <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+        <h4 class="product-name">
+          <strong><%= link_to product.name, product %></strong>
+        </h4>
+        <h4>
+            <small><%= product.information %></small>
+        </h4>
+    </div>
+    <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+      <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+        <h6><strong><%= product.price %> $</strong></h6>
+      </div>
+      <div class="col-4 col-sm-4 col-md-4">
+          <div class="quantity">
+            <%= f.number_field :quantity, value: order_product.quantity.to_i,
+              class: "form-control", min: 1 %>
+          <%= f.hidden_field :product_id, value: product.id %>
+          </div>
+      </div>
+      <div class="col-2 col-sm-2 col-md-2 text-right">
+        <button type="button" class="btn btn-outline-danger btn-xs">
+          <i class="fa fa-trash" aria-hidden="true">x</i>
+        </button>
+      </div>
+    </div>
+  </div>
+<% end %>
+

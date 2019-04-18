@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :category
+  has_many :order_products
   validates :name, presence: true,
     length: {
       maximum: Settings.product_name.maximum,

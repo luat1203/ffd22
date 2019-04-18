@@ -1,0 +1,13 @@
+<% provide(:title, t(".products")) %>
+<div class="row">
+  <div class="col-lg-9">
+    <% if @products.any? %>
+      <h3><%= t(".products") %>: <%= @products.count %></h3>
+      <div class="row">
+        <%= render @products, order_product: @order_product %>
+      </div>
+      <%= will_paginate(@products,
+        :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+    <% end %>
+  </div>
+</div>

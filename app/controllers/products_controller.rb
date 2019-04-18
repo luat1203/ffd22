@@ -3,6 +3,12 @@ class ProductsController < ApplicationController
 
   def show; end
 
+  def index
+    @products = Product.all.order_desc.paginate page: params[:page],
+      per_page: Settings.per_page.products
+    @order_product = current_order.order_products.new
+  end
+
   private
 
   def load_product

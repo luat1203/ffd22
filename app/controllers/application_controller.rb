@@ -1,5 +1,15 @@
 class ApplicationController < ActionController::Base
+  include SessionsHelper
   before_action :set_locale
+  helper_method :current_order
+
+  def current_order
+    if session[:order_id].present?
+      Order.find_by id: session[:order_id]
+    else
+      Order.new
+    end
+  end
 
   private
 
@@ -11,5 +21,4 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
-  include SessionsHelper
 end

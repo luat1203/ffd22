@@ -1,0 +1,33 @@
+<% provide(:title, t(".your_cart")) %>
+
+<div class="shopping-cart">
+  <% if !@order_product.nil? && @order_product.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+      <% @order_product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% if @order_products.size == 0 %>
+    <p class="text-center">
+      <%= t ".no_item" %>
+    </p>
+  <% else %>
+    <div class="card shopping-cart">
+      <div class="card-header bg-dark text-light">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <%= t ".your_cart" %>
+          <div class="clearfix"></div>
+      </div>
+
+      <div class="card-body">
+        <% @order_products.each do |order_product| %>
+          <%= render "carts/cart_row", product: order_product.product,
+            order_product: order_product, show_total: true %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
