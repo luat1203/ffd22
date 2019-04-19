@@ -8,7 +8,7 @@ body {
 /* forms-signin */
 .form-signin {
   width: 100%;
-  max-width: 330px;
+  max-width: 430px;
   padding: 15px;
   margin: auto;
 }
@@ -67,4 +67,15 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 15px;
+}
+
+/* Users index */
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 0.5px solid $gray-200;
+  }
 }

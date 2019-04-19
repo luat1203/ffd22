@@ -14,9 +14,8 @@
         </li>
         <% if logged_in? %>
           <li class="nav-item">
-            <%= link_to t(".users"), "#", class: "nav-link" %>
+            <%= link_to t(".users"), users_path, class: "nav-link" %>
           </li>
-
           <li class="nav-item dropdown">
             <%= link_to "#", class: "nav-link dropdown-toggle",
               "data-toggle" => "dropdown" do %>

@@ -19,3 +19,4 @@ product_price:
   minimum: 0
 product_quantity:
   minimum: 0
+per_page: 15
