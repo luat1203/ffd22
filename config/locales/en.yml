@@ -37,16 +37,37 @@ en:
       profile: "Profile"
       settings: "Settings"
       log_out: "Log out"
+    footer:
+      about: "About"
+      contact: "Contact"
+      help: "Help"
   users:
     new:
       sign_up: "Sign up"
       create_my_account: "Create my account"
+    create:
+      welcome: "Welcome to the Sample App!"
+    load_user:
+      user_not_found: "User not found"
+    index:
+      title: "All user"
+      heading: "All user"
+    edit:
+      title: "Edit user"
+      update_your_profile: "Update your profile"
+      save_changes: "Save changes"
+    update:
+      profile_updated: "Profile updated"
+    form:
       name: "Name"
       email: "Email"
       phone_number: "Phone Number"
       password: "Password"
       phone_number: "Phone Number"
       confirmation: "Confirmation"
+      phone: "Phone Number"
+    logged_in_user:
+      please_log_in: "Please log in."
     create:
       welcome: "Welcome to the Sample App!"
       check_email: "Please check your email to activate your account."
