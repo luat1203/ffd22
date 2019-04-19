@@ -43,6 +43,9 @@ en:
     home:
       title: "Home"
       sign_up_now: "Sign up now!"
+  static_pages:
+    home:
+      title: "Home"
     help:
       title: "Help"
     about:
@@ -69,14 +72,13 @@ en:
       create_my_account: "Create my account"
       name: "Name"
       email: "Email"
+      phone_number: "Phone Number"
       password: "Password"
       phone_number: "Phone Number"
       confirmation: "Confirmation"
     create:
       welcome: "Welcome to the Sample App!"
       check_email: "Please check your email to activate your account."
-    load_user:
-      user_not_found: "User not found"
   shared:
     error_messages:
       form_contains: "The form contains "
@@ -109,8 +111,6 @@ en:
     update:
       cant_empty: "can't be empty"
       has_been_reset: "Password has been reset."
-    load_user:
-      user_not_found: "User not found"
     check_expiration:
       password_has_expired: "Password reset has expired."
   user_mailer:
@@ -129,10 +129,17 @@ en:
     edit:
       account_activated: "Account activated!"
       invalid_link: "Invalid activation link"
+  products:
+    show:
+      quantity: "Quantity"
   controllers:
+    products:
+      product_not_found: "Product not found"
     users:
       user_not_found: "User not found"
     sessions:
       user_not_found: "User not found"
     account_activations:
       user_not_found: "User not found for activate"
+    password_reset:
+      user_not_found: "User not found for reset password"
