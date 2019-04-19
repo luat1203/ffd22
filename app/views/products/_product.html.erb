@@ -13,7 +13,7 @@
     </div>
     <div class="card-footer">
       <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-      <%= form_for order_product, remote: true do |f| %>
+      <%= form_for(:cart, url: url_for(controller: "carts", action: "create")) do |f| %>
         <div class="row">
           <div class="col">
             <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>

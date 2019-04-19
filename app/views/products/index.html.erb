@@ -4,7 +4,7 @@
     <% if @products.any? %>
       <h3><%= t(".products") %>: <%= @products.count %></h3>
       <div class="row">
-        <%= render @products, order_product: @order_product %>
+        <%= render @products, cart_product: @cart_product %>
       </div>
       <%= will_paginate(@products,
         :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>

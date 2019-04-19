@@ -1,13 +1,4 @@
-<% if !@order_product.nil? && @order_product.errors.any? %>
-  <div class="alert alert-danger">
-    <ul>
-    <% @order_product.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-<% if @order_products.size == 0 %>
+<% if @cart_products.nil? %>
   <p class="text-center">
     <%= t ".no_item" %>
   </p>
@@ -19,9 +10,9 @@
     </div>
 
     <div class="card-body">
-      <% @order_products.each do |order_product| %>
-        <%= render "carts/cart_row", product: order_product.product,
-          order_product: order_product, show_total: true %>
+      <% @cart_products.each do |product_id, quantity| %>
+        <%= render "carts/cart_row", product: find_product(product_id),
+          quantity: quantity, show_total: true %>
       <% end %>
     </div>
   </div>

@@ -3,12 +3,8 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   helper_method :current_order
 
-  def current_order
-    if session[:order_id].present?
-      Order.find_by id: session[:order_id]
-    else
-      Order.new
-    end
+  def cart_products
+    session
   end
 
   private

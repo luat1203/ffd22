@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     get "carts/show"
+    post "carts/create"
 
     resources :users, :products, :categories
     resources :account_activations, only: :edit
