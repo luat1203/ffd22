@@ -1,0 +1,12 @@
+<%= form_for(@category) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :name, t(".name") %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :parent_id, t(".parent_category") %>
+  <%= f.select(:parent_id,
+    options_for_select(collect_categories, {selected: yield(:params)}),
+    {include_blank: "nil"}, {class: "form-control"}) %>
+  <%= f.submit yield(:button_text), class: "btn btn-primary btn-block" %>
+<% end %>

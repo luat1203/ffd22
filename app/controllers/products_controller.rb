@@ -1,7 +1,16 @@
 class ProductsController < ApplicationController
-  before_action :load_product, only: :show
+  before_action :load_product, only: %i(show destroy)
 
   def show; end
+
+  def destroy
+    if @product.destroy
+      flash[:success] = t ".destroy_success"
+    else
+      flash[:danger] = t ".destroy_failed"
+    end
+    redirect_to request.referrer || root_path
+  end
 
   private
 
