@@ -1,0 +1,31 @@
+<%= form_for(@product, html: {class: "form-product"}) do |f| %>
+<h1><%= yield(:heading) %></h1>
+
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label :name, t(".name") %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :price, t(".price") %>
+  <%= f.number_field :price, class: "form-control" %>
+
+  <%= f.label :information, t(".information") %>
+  <%= f.text_area :information, class: "form-control" %>
+
+  <%= f.label :image, t(".image") %>
+  <span class="picture">
+  <%= f.file_field :image, class: "form-control" %>
+  </span>
+
+  <%= f.label :classify, t(".classify") %>
+  <%= f.select(:classify, options_for_select([[t("food"), true],
+    [t("drink"), false]]), {include_blank: false}, class: "form-control") %>
+
+  <%= f.label :quantity, t(".quantity") %>
+  <%= f.number_field :quantity, class: "form-control" %>
+
+  <%= f.label :category_id, t(".category_id") %>
+  <%= f.select(:category_id, categories_ordered,
+    {include_blank: false}, class: "form-control") %>
+
+  <%= f.submit yield(:heading), class: "btn btn-primary" %>
+<% end %>
