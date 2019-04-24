@@ -1,0 +1,17 @@
+<% provide(:title, t(".your_order")) %>
+
+<div class="card order">
+  <div class="card-header bg-dark text-light">
+    <%= t ".your_order" %>#<%= @order.id %>
+    <div class="clearfix"></div>
+  </div>
+  <div class="card-body">
+    <% @order_products.each do |order_product| %>
+      <%= render "order_product", order_product: find_product(order_product.id),
+        quantity: order_product.quantity %>
+    <% end %>
+  </div>
+  <div class="card-footer text-right">
+    <%= number_to_currency @order.total_price %>
+  </div>
+</div>

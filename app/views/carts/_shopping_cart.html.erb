@@ -14,6 +14,7 @@
         <%= render "carts/cart_row", product: find_product(product_id),
           quantity: quantity, show_total: true %>
       <% end %>
+      <%= link_to "Order", orders_path, method: :post, class: "btn btn-danger" %>
     <% end %>
   </div>
 </div>

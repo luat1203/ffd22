@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :category
+  has_many :order_products
   mount_uploader :image, ImageUploader
   validates :name, presence: true,
     length: {
