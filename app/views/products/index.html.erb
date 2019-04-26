@@ -7,14 +7,15 @@
       class: "btn btn-success" if logged_in? && current_user.admin? %>
   </div>
 
-  <%= will_paginate(@products,
-    renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+  <% if @products.present? %>
+    <%= will_paginate(@products,
+      renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 
-  <div class="row">
-    <%= render @products %>
-  </div>
+    <div class="row">
+      <%= render @products %>
+    </div>
 
-  <%= will_paginate(@products,
-    renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+    <%= will_paginate(@products,
+      renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+  <% end %>
 </div>
-

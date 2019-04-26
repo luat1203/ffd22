@@ -15,6 +15,7 @@ en:
   edit: "Edit"
   delete: "Delete"
   you_sure: "You sure?"
+  cart: "Cart"
   static_pages:
     home:
       title: "Home"
@@ -64,6 +65,7 @@ en:
     form:
       name: "Name"
       email: "Email"
+      password: "Password"
       phone_number: "Phone Number"
       password: "Password"
       password: "Password"
@@ -158,13 +160,22 @@ en:
     destroy:
       product_deleted: "Product deleted"
       product_delete_failed: "Delete product failed"
+    product:
+      add_to_cart: "Add to Cart"
   application:
     logged_in_user:
       please_log_in: "Please log in."
+  carts:
+    show:
+      your_cart: "Your Cart"
+      no_item: "There are no items in your shopping cart."
+    cart_row:
+      you_sure: "Are you sure?"
   controllers:
     products:
       product_created: "Product Created"
       product_not_found: "Product not found"
+      product_created: "Product Created"
     users:
       user_not_found: "User not found"
     sessions:
@@ -176,6 +187,9 @@ en:
     application:
       logged_in_user:
         please_log_in: "Please log in."
+    carts:
+      product_not_found: "Product not found"
+      must_greater_1: "Quantity must greater than 1"
   categories:
     new:
       title: "Categories"
