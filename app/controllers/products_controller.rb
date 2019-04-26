@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :logged_in_user, :admin_user,
     only: %i(new create edit update destroy)
-  before_action :load_product, only: %i(show edit update destroy)
+  before_action :load_product, except: %i(create new index)
 
   def show; end
 
