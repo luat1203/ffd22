@@ -1,5 +1,5 @@
 <% product = find_product(cart_product[0]) %>
-<%= form_for(:cart, remote: true) do |f| %>
+<%= form_for(:carts, url: carts_update_path, remote: true) do |f| %>
   <% if product.present? %>
     <div class="row">
       <div class="col-12 col-sm-12 col-md-2 text-center">
@@ -15,23 +15,24 @@
           </h4>
       </div>
       <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
-        <div class="col-4 col-sm-4 col-md-4 text-md-right pt-2">
+        <div class="col-4 col-sm-4 col-md-4 text-md-right pt-2 ">
           <h6><strong><%= number_to_currency product.price %></strong></h6>
         </div>
-        <div class="col-4 col-sm-4 col-md-3">
+        <div class="col-4 col-sm-4 col-md-3 p-0">
             <div class="quantity">
               <%= f.number_field :quantity, value: cart_product[1].to_i,
                 class: "form-control", min: Settings.carts.minimum_quantity %>
               <%= f.hidden_field :product_id, value: product.id %>
             </div>
         </div>
-        <div class="col-4 col-sm-4 col-md-4 text-right" style="padding: 0">
-          <%= button_tag class: "btn btn-primary" do %>
+        <div class="col-4 col-sm-4 col-md-4 text-right p-0">
+          <%= f.button class: "btn btn-primary" do %>
             <i class="fa fa-edit"></i>
           <% end %>
-          <%= link_to "#",
-            {data: {confirm: t(".you_sure")},
-              method: :delete, remote: true, class: "btn btn-danger"} do %>
+
+          <%= link_to carts_destroy_path(product_id: product.id ),
+            method: :delete, data: {confirm: t("you_sure")}, remote: true,
+            class: "btn btn-danger" do %>
             <i class="fa fa-trash-o"></i>
           <% end %>
         </div>
