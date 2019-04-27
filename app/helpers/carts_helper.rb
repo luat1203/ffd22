@@ -15,4 +15,13 @@ module CartsHelper
   def render_cart_quantity
     cart_products.blank? ? Settings.carts.no_product : cart_products.size
   end
+
+  def calculate_total_price cart_products
+    @total = 0
+    cart_products.each do |id, quantity|
+      product = Product.find_by id: id
+      @total += product.price.to_i * quantity.to_i if product.present?
+    end
+    @total
+  end
 end

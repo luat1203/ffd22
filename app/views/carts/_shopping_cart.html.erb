@@ -4,7 +4,6 @@
     <div class="clearfix"></div>
   </div>
   <div class="card-body">
-
     <% if @cart_products.blank? %>
       <p class="text-center">
         <%= t ".no_item" %>
@@ -12,5 +11,11 @@
     <% else %>
       <%= render partial: "cart_product", collection: @cart_products %>
     <% end %>
+  </div>
+  <div class="card-footer text-right">
+    <%= t(".total") %>
+    <span class="total-price">
+      <%= number_to_currency calculate_total_price @cart_products %>
+    </span>
   </div>
 </div>

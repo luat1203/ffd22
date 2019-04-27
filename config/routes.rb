@@ -9,8 +9,10 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
-    get "carts/show"
+    get "/carts", to: "carts#show"
     post "carts/create"
+    delete "carts/destroy"
+    post "carts/update"
 
     resources :users, :products, :categories
     resources :account_activations, only: :edit
