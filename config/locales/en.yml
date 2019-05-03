@@ -169,11 +169,12 @@ en:
     show:
       your_cart: "Your Cart"
       no_item: "There are no items in your shopping cart."
-    cart_row:
+    shopping_cart:
+      total: "Total: "
+    cart_product:
       you_sure: "Are you sure?"
   controllers:
     products:
-      product_created: "Product Created"
       product_not_found: "Product not found"
       product_created: "Product Created"
     users:
@@ -188,8 +189,7 @@ en:
       logged_in_user:
         please_log_in: "Please log in."
     carts:
-      product_not_found: "Product not found"
-      must_greater_1: "Quantity must greater than 1"
+      have_error: "Have error. Try again!"
   categories:
     new:
       title: "Categories"
