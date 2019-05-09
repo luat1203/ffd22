@@ -2,20 +2,14 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "products#index"
 
-    get "password_resets/new"
-    get "password_resets/edit"
+    devise_for :users
     get "static_pages/home"
-    get "/signup", to: "users#new"
-    get "/login", to: "sessions#new"
-    post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
     get "/carts", to: "carts#show"
     post "carts/create"
     delete "carts/destroy"
     post "carts/update"
 
-    resources :users, :products, :categories
-    resources :account_activations, only: :edit
-    resources :password_resets, except: %i(index destroy show)
+    resources :products, :categories
+    resources :users, only: %i(show index)
   end
 end
