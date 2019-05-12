@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_09_040236) do
+ActiveRecord::Schema.define(version: 2019_05_12_203555) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.integer "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_05_09_040236) do
     t.integer "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -60,6 +62,7 @@ ActiveRecord::Schema.define(version: 2019_05_09_040236) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
     t.index ["category_id", "created_at"], name: "index_products_on_category_id_and_created_at"
     t.index ["category_id"], name: "index_products_on_category_id"
   end

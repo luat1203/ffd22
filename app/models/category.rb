@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
+  acts_as_paranoid
   has_many :products, dependent: :destroy
   has_many :children, class_name: Category.name, foreign_key: :parent_id,
     dependent: :destroy

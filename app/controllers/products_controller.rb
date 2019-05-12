@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
 
   def index
     @q = Product.ransack(params[:q])
-    @products = @q.result(distinct: true).includes(:category)
+    @products = @q.result(distinct: true).includes(:category).order_desc
                   .paginate(page: params[:page],
                     per_page: Settings.per_page.products)
     flash.now[:danger] = t ".no_product" if @products.blank?
