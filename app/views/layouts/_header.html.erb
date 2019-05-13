@@ -6,7 +6,7 @@
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <% if user_signed_in? && current_user.admin? %>
+        <% if user_signed_in? && !current_user.admin? %>
           <li class="nav-item">
             <%= link_to carts_path, class: "btn btn-info" do %>
               <%= t "cart" %>
@@ -32,8 +32,22 @@
             </li>
 
             <li class="nav-item">
-            <%= link_to t(".users"), users_path, class: "nav-link" %>
-          </li>
+              <%= link_to t(".users"), users_path, class: "nav-link" %>
+            </li>
+
+            <li class="nav-item">
+              <%= link_to t(".suggestions"), suggestions_path,
+                class: "nav-link" %>
+            </li>
+
+            <li class="nav-item">
+              <%= link_to t(".orders"), orders_path, class: "nav-link" %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to t(".suggestions"), new_suggestion_path,
+                class: "nav-link" %>
+            </li>
           <% end %>
 
           <li class="nav-item dropdown">
@@ -42,10 +56,15 @@
               <%= t ".account" %><b class="caret"></b>
             <% end %>
             <ul class="dropdown-menu">
-              <li class="dropdown-item"><%= link_to t(".profile"),
-                current_user %></li>
-              <li class="dropdown-item"><%= link_to t(".settings"),
-                edit_user_registration_path %></li>
+              <li class="dropdown-item">
+                <%= link_to t(".profile"), current_user %>
+              </li>
+              <li class="dropdown-item">
+                <%= link_to t(".settings"), edit_user_registration_path %>
+              </li>
+              <li class="dropdown-item">
+                <%= link_to t(".my_order"), orders_path %>
+              </li>
               <li class="dropdown-divider"></li>
               <li class="dropdown-item">
                 <%= link_to t(".log_out"), destroy_user_session_path,
@@ -55,7 +74,8 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to t(".log_in"), new_user_session_path, class: "nav-link" %>
+            <%= link_to t(".log_in"), new_user_session_path,
+              class: "nav-link" %>
           </li>
         <% end %>
       </ul>
