@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :load_comment, only: %i(edit update destroy)
   before_action :load_comment_product, only: %i(update destroy)
   before_action :authenticate_user!, only: :create
+  authorize_resource
 
   def create
     @comment = Comment.new comment_params

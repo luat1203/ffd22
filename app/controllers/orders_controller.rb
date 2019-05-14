@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   before_action :load_order, only: %i(show update destroy)
   before_action :check_quantity_available, :check_cart_products, only: :create
   before_action :load_list_orders, only: :index
+  authorize_resource except: :destroy
 
   def show
     if @order.user_id == current_user.id
@@ -32,7 +33,8 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    if (@order.user_id == current_user.id || admin_user?) && @order.destroy
+    authorize! :destroy, @order, message: t(".cannot_delete_approved_order")
+    if @order.destroy
       flash[:success] = t "orders.controllers.order_deleted"
     else
       flash[:danger] = t "orders.controllers.can_not_delete"

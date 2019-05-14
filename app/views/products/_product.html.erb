@@ -15,21 +15,22 @@
         <%= truncate_info product.information %>
       </p>
     </div>
-      <div class="card-footer">
-        <small class="text-muted">
-          <% if product.comments.present? %>
-            <% product.comments.average(:rating).ceil.times do %>
-              <span class="text-warning">&#9733;</span>
-            <% end %>
-            <% blank_star(product.comments.average(:rating)).ceil.times do %>
-              <span class="text-warning">&#9734;</span>
-            <% end %>
-            <%= t("products.product",
-              count: product.comments.average(:rating).ceil) %>
+    <div class="card-footer">
+      <small class="text-muted">
+        <% if product.comments.present? %>
+          <% product.comments.average(:rating).ceil.times do %>
+            <span class="text-warning">&#9733;</span>
           <% end %>
-        </small>
+          <% blank_star(product.comments.average(:rating)).ceil.times do %>
+            <span class="text-warning">&#9734;</span>
+          <% end %>
+          <%= t("products.product",
+            count: product.comments.average(:rating).ceil) %>
+        <% end %>
+      </small>
 
-        <% if user_signed_in? && current_user.admin? %>
+      <% if user_signed_in? %>
+        <% if current_user.admin? %>
           <div>
             <%= link_to t("edit"), edit_product_path(product),
               class: "btn btn-success btn-sm" %>
@@ -52,6 +53,10 @@
             </div>
           <% end %>
         <% end %>
-      </div>
+      <% else %>
+        <%= link_to t(".log_in_to_add"), new_user_session_path,
+          class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>
